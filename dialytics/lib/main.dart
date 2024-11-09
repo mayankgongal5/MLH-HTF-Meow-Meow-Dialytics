@@ -9,8 +9,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: Creds.SUPABASE_URL,
-    anonKey: Creds.SUPABASE_URL,
+    url: '${{ secrets.SUPABASE_URL }}',
+    anonKey: '${{ secrets.SUPABASE_ANON_KEY }}',
   );
 
   final session = Supabase.instance.client.auth.currentSession;
