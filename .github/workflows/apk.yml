@@ -1,0 +1,97 @@
+# name: APK Build dialytics
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   Deploy-Preview:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+
+#       - name: Create creds.dart File
+#         run: |
+#           echo 'class Credentials {' > ./dialytics/lib/creds.dart
+#           echo "  static const String SUPABASE_ANON_KEY = '${{ secrets.SUPABASE_ANON_KEY }}';" >> ./dialytics/lib/creds.dart
+#           echo "  static const String SUPABASE_URL = '${{ secrets.SUPABASE_URL }}';" >> ./dialytics/lib/creds.dart
+#           echo '}' >> ./dialytics/lib/creds.dart
+
+#       - name: Set up Flutter
+#         uses: subosito/flutter-action@v2
+
+#       - name: Install dependencies
+#         run: flutter pub get
+
+#       - name: Display pub get logs if failed
+#         if: failure()
+#         run: cat pubspec.lock
+
+#       - name: Build APK
+#         run: flutter build apk --debug
+
+#       - name: Build AAB
+#         run: flutter build appbundle --debug
+
+#       - name: Upload Release Asset
+#         run: |
+#           gh release create "$TAG_NAME"
+#           gh release upload "$TAG_NAME" "dialytics/build/app/outputs/flutter-apk/app-debug.apk#v$TAG_NAME.apk"
+#           gh release upload "$TAG_NAME" "dialytics/build/app/outputs/bundle/debug/app-debug.aab#v$TAG_NAME.aab"
+
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           TAG_NAME: ${{ github.run_number }}
+
+
+
+name: APK Build dialytics
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create creds.dart File
+        run: |
+          echo "  const String SUPABASE_ANON_KEY = '${{ secrets.SUPABASE_ANON_KEY }}';" >> ./dialytics/lib/creds.dart
+          echo "  const String SUPABASE_URL = '${{ secrets.SUPABASE_URL }}';" >> ./dialytics/lib/creds.dart
+          echo '}' >> ./dialytics/lib/creds.dart
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ./dialytics
+
+      - name: Display pub get logs if failed
+        if: failure()
+        run: cat ./dialytics/pubspec.lock
+
+      - name: Build APK
+        run: flutter build apk --debug
+        working-directory: ./dialytics
+
+      - name: Build AAB
+        run: flutter build appbundle --debug
+        working-directory: ./dialytics
+
+      - name: Upload Release Asset
+        run: |
+          gh release create "$TAG_NAME"
+          gh release upload "$TAG_NAME" "dialytics/build/app/outputs/flutter-apk/app-debug.apk#v$TAG_NAME.apk"
+          gh release upload "$TAG_NAME" "dialytics/build/app/outputs/bundle/debug/app-debug.aab#v$TAG_NAME.aab"
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.run_number }}
