@@ -1,0 +1,60 @@
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.25fr)); /* Adjusted min size */
+    gap: 20px;
+    padding: 20px;
+}
+
+.employee-card {
+    background-color: #fff;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden; /* Prevent overflow from large text or images */
+}
+
+.employee-card:hover {
+    transform: translateY(-10px);
+}
+
+.employee-image {
+    width: 80px; /* Reduced size for smaller screens */
+    height: 80px; /* Reduced size for smaller screens */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 1.2em; /* Responsive font size */
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9em; /* Responsive font size */
+}
+
+/* Add media queries for additional responsiveness */
+@media (max-width: 600px) {
+    .employee-card {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    h3 {
+        font-size: 1em; /* Smaller heading on small screens */
+    }
+
+    p {
+        font-size: 0.8em; /* Smaller paragraph text */
+    }
+}
+
+.team{
+    margin-left: 30px;
+    margin-top: 90px;
+}

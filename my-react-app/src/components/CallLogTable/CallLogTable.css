@@ -1,0 +1,174 @@
+/* Container for the entire page */
+.container {
+  margin-left: 20px;
+  /* margin: 0 auto; Center the container */
+  margin-top: 80px;
+  padding: 20px;
+  max-width: 1800px; /* Set a max width for larger screens */
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Dark text for readability */
+}
+
+/* Table styling */
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapses the table borders */
+  margin-top: 20px;
+  background-color: #fff; /* White background for the table */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensure the corners are rounded */
+}
+
+/* Header Row */
+thead {
+  background-color: #4CAF50; /* Green header background */
+  color: white;
+  text-align: left;
+}
+
+/* Header cells (th) */
+th {
+  padding: 15px 20px; /* Increased padding for header */
+  text-align: left;
+  border-bottom: 2px solid #ddd; /* Light border below header */
+}
+
+/* Body Rows */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light grey for even rows */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+
+/* Table cells (td) */
+td {
+  padding: 12px 20px; /* Increased padding for spacing between columns */
+  border-bottom: 1px solid #ddd; /* Light border below each row */
+  text-align: left;
+  color: #333; /* Dark text for readability */
+  font-size: 14px;
+}
+
+/* Hover effect on rows */
+tbody tr:hover {
+  background-color: #f1f1f1; /* Slight grey highlight on hover */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+}
+
+/* Audio Player Styling */
+td audio {
+  max-width: 100%; /* Limit the width of audio player */
+  padding: 5px 10px;
+}
+
+/* Column Spacing */
+th,
+td {
+  padding: 12px 25px; /* Horizontal padding to add space between columns */
+}
+
+/* Table responsive styling */
+@media screen and (max-width: 768px) {
+  table {
+    display: block; /* Change the display to block for mobile */
+    overflow-x: auto; /* Add horizontal scroll for table */
+    border: 1px solid #ddd; /* Add a border to the table */
+  }
+
+  thead {
+    display: none; /* Hide the header for mobile */
+  }
+
+  tbody tr {
+    display: block; /* Each row becomes a block */
+    margin-bottom: 15px; /* Space between rows */
+    border: 1px solid #ddd; /* Border around each row */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* Ensure consistent background color */
+  }
+
+  tbody tr td {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between label and value */
+    padding: 10px; /* Less padding for mobile */
+    border: none; /* Remove borders for table cells */
+    text-align: left; /* Align text to the left */
+  }
+
+  tbody tr td::before {
+    content: attr(data-label); /* Use data-label for labels */
+    font-weight: bold; /* Make label bold */
+    margin-right: 10px; /* Space between label and value */
+  }
+
+  td {
+    text-align: right; /* Align text to the right */
+  }
+}
+
+/* General styling for a neat, polished look */
+body {
+  margin: 0px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Light background for the page */
+  color: #333;
+}
+
+/* Loading text styling */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  padding: 20px;
+}
+
+/* Existing styles remain unchanged */
+
+/* New styles for call type arrows */
+.incoming-call {
+  color: green; /* Green color for incoming call */
+}
+
+.outgoing-call {
+  color: red; /* Red color for outgoing call */
+}
+
+/* Style for the analyze button */
+.analyze-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for button */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.analyze-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Other existing styles remain unchanged */
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.date-filter {
+  margin-top: 10px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
