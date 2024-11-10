@@ -12,8 +12,8 @@ const AnalyzePage = () => {
   const [sentimentDetails, setSentimentDetails] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const GEMINI_API_KEY = 'AIzaSyCc8zI2U2rhJyGVfahyGUUWM5wTHhxFzzw';  // Replace with your actual Gemini API key
-  const ASSEMBLY_AI_API_KEY = '05be3a0eb00d422ab91486f9590684c0';  // Replace with your AssemblyAI API key
+  const GEMINI_API_KEY = '';  // Replace with your actual Gemini API key
+  const ASSEMBLY_AI_API_KEY = '';  // Replace with your AssemblyAI API key
 
   useEffect(() => {
     if (!audioUrl) return;

@@ -1,21 +1,4 @@
-// // src/components/SelectEmployee.js
-// function SelectEmployee({ employees, onSelectEmployee }) {
-//     return (
-//       <div>
-//         <label>Select Employee: </label>
-//         <select onChange={(e) => onSelectEmployee(e.target.value)}>
-//           <option value="">-- Select --</option>
-//           {employees.map((employee) => (
-//             <option key={employee} value={employee}>
-//               {employee}
-//             </option>
-//           ))}
-//         </select>
-//       </div>
-//     );
-//   }
-  
-//   export default SelectEmployee;
+
 
 import React from 'react';
 import './SelectEmployee.css';

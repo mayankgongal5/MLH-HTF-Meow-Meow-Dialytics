@@ -1,27 +1,4 @@
-// // src/components/Header.js
-// function Header() {
-//     return (
-//       <div style={styles.header}>
-//         <p className="headtext">Admin Dashboard</p>
-//       </div>
-//     );
-//   }
-  
-//   const styles = {
-//     header: {
-//       position: 'fixed',
-//       top: 0,
-//       left: '250px',
-//       height: '50px',
-//       width: 'calc(100% - 250px)',
-//       backgroundColor: '#ffff',
-//       padding: '10px',
-//       textAlign: 'center',
-//       zIndex: 10,
-//     },
-//   };
-  
-//   export default Header;
+
   
 
 // src/components/Header.jsx
