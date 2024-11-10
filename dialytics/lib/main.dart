@@ -10,7 +10,7 @@ void main() async {
 
   await Supabase.initialize(
     url: Creds.SUPABASE_URL,
-    anonKey: Creds.SUPABASE_URL,
+    anonKey: Creds.SUPABASE_ANON_KEY,
   );
 
   final session = Supabase.instance.client.auth.currentSession;
@@ -32,3 +32,10 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+//hi

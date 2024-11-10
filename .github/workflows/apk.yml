@@ -63,8 +63,9 @@ jobs:
 
       - name: Create creds.dart File
         run: |
-          echo "  const String SUPABASE_ANON_KEY = '${{ secrets.SUPABASE_ANON_KEY }}';" >> ./dialytics/lib/creds.dart
-          echo "  const String SUPABASE_URL = '${{ secrets.SUPABASE_URL }}';" >> ./dialytics/lib/creds.dart
+          echo 'class Creds {' > ./dialytics/lib/creds.dart
+          echo "  static final String SUPABASE_ANON_KEY = '${{ secrets.SUPABASE_ANON_KEY }}';" >> ./dialytics/lib/creds.dart
+          echo "  static final  String SUPABASE_URL = '${{ secrets.SUPABASE_URL }}';" >> ./dialytics/lib/creds.dart
           echo '}' >> ./dialytics/lib/creds.dart
 
       - name: Set up Flutter
