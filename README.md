@@ -49,7 +49,7 @@ Dialytics offers a comprehensive solution by:
 | **CI/CD**          | Git, GitHub Actions                 |
 
 
-## Installation and Setup
+## Installation & Setup
 
 1. **Clone the Repository**:
    ```bash
